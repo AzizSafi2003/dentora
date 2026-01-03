@@ -1,4 +1,5 @@
 {
   "window.zoomLevel": 1,
-  "cSpell.words": ["Dentora"]
+  "cSpell.words": ["cuid", "Dentora"],
+  "prisma.pinToPrisma6": true
 }

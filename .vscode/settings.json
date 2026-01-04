@@ -1,5 +1,10 @@
 {
   "window.zoomLevel": 1,
   "cSpell.words": ["cuid", "Dentora"],
-  "prisma.pinToPrisma6": true
+  "prisma.pinToPrisma6": true,
+  "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on"
 }

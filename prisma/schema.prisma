@@ -1,0 +1,80 @@
+// This is your Prisma schema file
+// Prisma version: 6.16.2
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/* Patients, Doctors, Appointments */
+
+model Patient {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String   @unique
+  firstName String?
+  lastName  String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // relations
+  appointments Appointment[]
+
+  @@map("patients")
+}
+
+model Doctor {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  phone     String
+  specialty String
+  bio       String?
+  imageUrl  String
+  gender    Gender
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // relations
+  appointments Appointment[]
+
+  @@map("doctors")
+}
+
+model Appointment {
+  id        String   @id @default(cuid())
+  date      DateTime
+  time      String   // e.g. "14:30" or "2:30 PM"
+  duration  Int      @default(30)
+  status    AppointmentStatus @default(CONFIRMED)
+  notes     String?
+  reason    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // foreign keys
+  patientId String
+  doctorId  String
+
+  // relations
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  doctor  Doctor  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@map("appointments")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum AppointmentStatus {
+  CONFIRMED
+  COMPLETED
+}

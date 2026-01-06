@@ -6,10 +6,10 @@ import { prisma } from "../prisma";
 function transformAppointment(appointment: any) {
   return {
     ...appointment,
-    patientName: `${appointment.user.firstName || ""} ${
-      appointment.user.lastName || ""
+    patientName: `${appointment.patient.firstName || ""} ${
+      appointment.patient.lastName || ""
     }`.trim(),
-    patientEmail: appointment.user.email,
+    patientEmail: appointment.patient.email,
     doctorName: appointment.doctor.name,
     doctorImageUrl: appointment.doctor.imageUrl || "",
     date: appointment.date.toISOString().split("T")[0],

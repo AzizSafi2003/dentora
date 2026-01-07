@@ -54,11 +54,12 @@ async function DentalHealthOverview() {
             </div>
           </div>
           <div className="text-center p-4 bg-muted/30 rounded-xl">
-            <div className="text-2xl font-bold text-primary mb-1"></div>
+            <div className="text-2xl font-bold text-primary mb-1">
+              {memberSince}
+            </div>
             <div className="text-sm text-muted-foreground">Member Since</div>
           </div>
         </div>
-        {memberSince}
         <div className="mt-6 p-4 bg-linear-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
           <div className="flex items-start gap-3">
             <div className="size-10 bg-primary/20 rounded-lg flex items-center justify-center shrink-0">

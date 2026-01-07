@@ -30,8 +30,12 @@ function BookingConfirmationStep({
   return (
     <div className="space-y-6">
       {/* Header with back button */}
-      <div className="flex items-center gap-4 mb-6">
-        <Button variant="ghost" onClick={onBack}>
+      <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
+        <Button
+          className="border border-white/80 rounded-lg md:border-0"
+          variant="ghost"
+          onClick={onBack}
+        >
           <ChevronLeftIcon className="w-4 h-4 mr-2" />
           Back
         </Button>
@@ -87,7 +91,7 @@ function BookingConfirmationStep({
       </Card>
 
       {/* action buttons */}
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <Button variant="outline" onClick={onModify}>
           Modify Appointment
         </Button>

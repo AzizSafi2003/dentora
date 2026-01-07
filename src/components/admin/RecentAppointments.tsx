@@ -16,7 +16,10 @@ import {
   TableRow,
 } from "../ui/table";
 import { Button } from "../ui/button";
-import { useGetAppointments, useUpdateAppointmentStatus } from "@/hooks/use-appointments";
+import {
+  useGetAppointments,
+  useUpdateAppointmentStatus,
+} from "@/hooks/use-appointments";
 
 function RecentAppointments() {
   const { data: appointments = [] } = useGetAppointments();

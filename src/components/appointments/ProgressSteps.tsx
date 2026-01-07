@@ -4,7 +4,7 @@ const PROGRESS_STEPS = ["Select Dentist", "Choose Time", "Confirm"];
 
 function ProgressSteps({ currentStep }: { currentStep: number }) {
   return (
-    <div className="flex items-center gap-4 mb-8">
+    <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
       {PROGRESS_STEPS.map((stepName, index) => {
         const stepNumber = index + 1;
         const isActive = currentStep >= stepNumber;

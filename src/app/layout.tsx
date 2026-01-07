@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Dentora - AI Powered Dental Assistant",
   description:
     "Get instant dental advice through voice calls with our AI assistant. Available 24/7.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

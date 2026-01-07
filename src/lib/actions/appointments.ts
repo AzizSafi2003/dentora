@@ -38,7 +38,7 @@ export async function getAppointments() {
       orderBy: { createdAt: "desc" },
     });
 
-    return appointments;
+    return appointments.map(transformAppointment);
   } catch (error) {
     console.log("Error fetching appointments:", error);
     throw new Error("Failed to fetch appointments");

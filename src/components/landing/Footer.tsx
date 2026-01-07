@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="px-6 py-12 border-t bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
@@ -25,18 +25,20 @@ function Footer() {
             <h4 className="font-medium mb-3">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="#how_it_works" className="hover:text-foreground">
                   How it works
                 </a>
               </li>
+
               <li>
-                <a href="#" className="hover:text-foreground">
-                  Pricing
+                <a href="#about" className="hover:text-foreground">
+                  About
                 </a>
               </li>
+
               <li>
-                <a href="#" className="hover:text-foreground">
-                  FAQ
+                <a href="#pricing" className="hover:text-foreground">
+                  Pricing
                 </a>
               </li>
             </ul>
@@ -58,27 +60,6 @@ function Footer() {
               <li>
                 <a href="#" className="hover:text-foreground">
                   Status
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium mb-3">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground">
-                  Terms
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground">
-                  Security
                 </a>
               </li>
             </ul>

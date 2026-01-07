@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 function Header() {
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 px-6 py-2 border-b border-border/50 bg-background/80 backdrop-blur-md h-16">
+    <nav className="fixed top-0 right-0 left-0 z-50 px-2 md:px-6 py-2 border-b border-border/50 bg-background/80 backdrop-blur-md h-16 pt-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -20,22 +20,35 @@ function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <a
+            href="#how_it_works"
+            className="text-muted-foreground hover:text-foreground"
+          >
             How it Works
           </a>
 
-          <a href="#" className="text-muted-foreground hover:text-foreground">
-            Pricing
+          <a
+            href="#about"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            About
           </a>
 
-          <a href="#" className="text-muted-foreground hover:text-foreground">
-            About
+          <a
+            href="#pricing"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Pricing
           </a>
         </div>
 
         <div className="flex items-center gap-3">
           <SignInButton mode="modal">
-            <Button variant={"ghost"} size={"sm"}>
+            <Button
+              className="border border-white/80 md:border-0 rounded-lg"
+              variant={"ghost"}
+              size={"sm"}
+            >
               Login
             </Button>
           </SignInButton>

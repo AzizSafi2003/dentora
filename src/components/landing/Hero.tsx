@@ -71,9 +71,9 @@ function Hero() {
 
               {/* User Testimonials */}
               <div className="pt-8">
-                <div className="flex items-center gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                   {/* User Avatars */}
-                  <div className="flex -space-x-3">
+                  <div className="flex -space-x-3 mb-4 md:mb-0">
                     <Image
                       src={"/user1.jpeg"}
                       alt="Jessica Davis"

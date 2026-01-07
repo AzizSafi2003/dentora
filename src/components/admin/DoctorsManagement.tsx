@@ -40,7 +40,7 @@ function DoctorsManagement() {
   return (
     <>
       <Card className="mb-12">
-        <CardHeader className="flex items-center justify-between">
+        <CardHeader className="flex flex-col md:flex-row items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2">
               <Stethoscope className="size-5 text-primary" />
@@ -53,7 +53,7 @@ function DoctorsManagement() {
 
           <Button
             onClick={() => setIsAddDialogOpen(true)}
-            className="bg-linear-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary"
+            className="bg-linear-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary mt-4 md:mt-0"
           >
             <PlusIcon className="mr-2 size-4" />
             Add Doctor
@@ -65,7 +65,7 @@ function DoctorsManagement() {
             {doctors.map((doctor) => (
               <div
                 key={doctor.id}
-                className="flex items-center justify-between p-4 bg-muted/30 rounded-xl border border-border/50"
+                className="flex flex-col md:flex-row items-center justify-between p-4 bg-muted/30 rounded-xl border border-border/50"
               >
                 {/* Left Side */}
                 <div className="flex items-center gap-4">
@@ -77,7 +77,7 @@ function DoctorsManagement() {
                     className="size-12 rounded-full object-cover ring-2 ring-background"
                   />
 
-                  <div>
+                  <div className="space-y-2 md:space-y-0">
                     <div className="font-semibold">{doctor.name}</div>
                     <div className="text-sm text-muted-foreground">
                       {doctor.specialty}
@@ -87,7 +87,7 @@ function DoctorsManagement() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-4 mt-1">
+                    <div className="flex flex-col md:flex-row items-center gap-4 mt-1">
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <MailIcon className="h-3 w-3" />
                         {doctor.email}
@@ -101,9 +101,9 @@ function DoctorsManagement() {
                 </div>
 
                 {/* Right Side */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col md:flex-row items-center gap-3">
                   <div className="text-center">
-                    <div className="font-semibold text-primary">
+                    <div className="font-semibold text-primary mt-3 md:mt-0">
                       {doctor.appointmentCount}
                     </div>
                     <div className="text-xs text-muted-foreground">

@@ -6,7 +6,10 @@ import { Button } from "../ui/button";
 
 function HowItWorks() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden z-10 max-w-7xl mx-auto">
+    <section
+      id="how_it_works"
+      className="relative py-32 px-6 overflow-hidden z-10 max-w-7xl mx-auto"
+    >
       {/* Header */}
       <div className="text-center mb-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-primary/5 to-primary/10 rounded-full border border-primary/10 backdrop-blur-sm mb-6">

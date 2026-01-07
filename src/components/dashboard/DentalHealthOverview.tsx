@@ -11,10 +11,18 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { getUserAppointmentStats } from "@/lib/actions/appointments";
+import { redirect } from "next/navigation";
 
 async function DentalHealthOverview() {
-  const appointmentStats = await getUserAppointmentStats();
   const user = await currentUser();
+
+  if (!user) redirect("/");
+
+  const appointmentStats = await getUserAppointmentStats();
+
+  const memberSince = user.createdAt
+    ? format(new Date(user.createdAt), "MMM yyyy")
+    : "_";
 
   return (
     <Card className="lg:col-span-2">
@@ -46,13 +54,11 @@ async function DentalHealthOverview() {
             </div>
           </div>
           <div className="text-center p-4 bg-muted/30 rounded-xl">
-            <div className="text-2xl font-bold text-primary mb-1">
-              {format(new Date(user?.createdAt!), "MMM yyyy")}
-            </div>
+            <div className="text-2xl font-bold text-primary mb-1"></div>
             <div className="text-sm text-muted-foreground">Member Since</div>
           </div>
         </div>
-
+        {memberSince}
         <div className="mt-6 p-4 bg-linear-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
           <div className="flex items-start gap-3">
             <div className="size-10 bg-primary/20 rounded-lg flex items-center justify-center shrink-0">
@@ -66,14 +72,21 @@ async function DentalHealthOverview() {
                 Book your first appointment or try our AI voice assistant for
                 instant dental advice.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col md:flex-row gap-2">
                 <Link href="/voice">
-                  <Button size="sm" className="bg-primary hover:bg-primary/90">
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-xs md:text-base"
+                  >
                     Try AI Assistant
                   </Button>
                 </Link>
                 <Link href="/appointments">
-                  <Button size="sm" variant="outline">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="text-xs md:text-base"
+                  >
                     Book Appointment
                   </Button>
                 </Link>

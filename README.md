@@ -25,6 +25,12 @@
 
 ---
 
+## Live Demo
+Explore the project live here:  
+🔗 https://dentora-one.vercel.app
+
+---
+
 ## Overview
 
 Dentora a modern full-stack web application built with a **high-performance, production-grade stack**.  
